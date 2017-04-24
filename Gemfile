@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+if ENV['HEROKU_APP_NAME']
+  ruby '2.2.2'
+end
+
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
@@ -24,6 +28,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Unicorn as the app server
 # gem 'unicorn'
+# Use Puma as the app server
+gem 'puma'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
@@ -42,3 +48,6 @@ group :development do
 end
 
 gem 'locomotivecms', '~> 3.1.1'
+
+gem 'carrierwave-aws'
+gem 'platform-api', '~> 0.3.0'
